@@ -1,18 +1,33 @@
 public class CalculatorTest {
     public static void main(String[] args) {
 
-        Circle circle = new Circle();
-        Rectangle rectangle = new Rectangle();
 
-        rectangle.setSideA(10);
-        rectangle.setSideB(10);
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Circle();
+        shapes[1] = new Rectangle();
+        shapes[2] = new Circle();
 
-        circle.setRadius(10);
+        ((Circle) shapes[0]).setRadius(12);
 
-        System.out.println(ShapeCalculator.calculateRectangleArea(rectangle));
-        System.out.println(ShapeCalculator.calculateRectanglePerimeter(rectangle));
+        ((Rectangle) shapes[1]).setSideB(10);
+        ((Rectangle) shapes[1]).setSideA(10);
 
-        System.out.println(ShapeCalculator.calculateCircleArea(circle));
-        System.out.println(ShapeCalculator.calculateCirclePerimeter(circle));
+        ((Circle) shapes[2]).setRadius(1);
+
+        System.out.println("Pole prostokąta o bokach " + ((Rectangle) shapes[1]).getSideA() + " i " + (((Rectangle)
+                shapes[1]).getSideB()) + " wynosi: " + ShapeCalculator.calculateRectangleArea((Rectangle) shapes[1]));
+        System.out.println("Obwód prostokąta o bokach " + ((Rectangle) shapes[1]).getSideA() + " i " + (((Rectangle)
+                shapes[1]).getSideB()) + " wynosi: " + ShapeCalculator.calculateRectanglePerimeter((Rectangle)
+                shapes[1]));
+
+        System.out.println("Pole koła o promieniu: " + ((Circle) shapes[0]).getRadius() + " wynosi: "
+                + ShapeCalculator.calculateCircleArea((Circle) shapes[0]));
+        System.out.println("Obwód koła o promieniu: " + ((Circle) shapes[0]).getRadius() + " wynosi: "
+                + ShapeCalculator.calculateCirclePerimeter((Circle) shapes[0]));
+
+        System.out.println("Pole koła o promieniu: " + ((Circle) shapes[2]).getRadius() + " wynosi: "
+                + ShapeCalculator.calculateCircleArea((Circle) shapes[2]));
+        System.out.println("Obwód koła o promieniu: " + ((Circle) shapes[2]).getRadius() + " wynosi: "
+                + ShapeCalculator.calculateCirclePerimeter((Circle) shapes[2]));
     }
 }

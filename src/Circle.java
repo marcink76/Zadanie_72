@@ -1,4 +1,4 @@
-public class Circle {
+public class Circle extends Shape {
     private double radius = 0;
 
     public double getRadius() {
