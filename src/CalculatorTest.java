@@ -1,18 +1,10 @@
 public class CalculatorTest {
     public static void main(String[] args) {
 
-
         Shape[] shapes = new Shape[3];
-        shapes[0] = new Circle();
-        shapes[1] = new Rectangle();
-        shapes[2] = new Circle();
-
-        ((Circle) shapes[0]).setRadius(12);
-
-        ((Rectangle) shapes[1]).setSideB(10);
-        ((Rectangle) shapes[1]).setSideA(10);
-
-        ((Circle) shapes[2]).setRadius(1);
+        shapes[0] = new Circle(20);
+        shapes[1] = new Rectangle(10, 10);
+        shapes[2] = new Circle(10);
 
         System.out.println("Pole prostokąta o bokach " + ((Rectangle) shapes[1]).getSideA() + " i " + (((Rectangle)
                 shapes[1]).getSideB()) + " wynosi: " + ShapeCalculator.calculateRectangleArea((Rectangle) shapes[1]));
